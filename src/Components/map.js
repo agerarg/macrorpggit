@@ -134,15 +134,18 @@ class Map extends Component {
 
     }
     enterDungeonMap=(x,y)=>{
-        let found = this.findBlock(x,y);
-        if(found)
-          {
-            let newState={...this.state};
-            newState.redUrl='/map/dungeon/'+x+"_"+y;
-            newState.redirect=true;
-            this.setState(newState);
+        if(!(x===20 && y===20))
+        {
+            let found = this.findBlock(x,y);
+            if(found)
+            {
+                let newState={...this.state};
+                newState.redUrl='/map/dungeon/'+x+"_"+y;
+                newState.redirect=true;
+                this.setState(newState);
 
-          }
+            }
+        }
  
     }
     
