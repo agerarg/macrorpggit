@@ -5,7 +5,7 @@ import {Redirect} from 'react-router-dom';
 
 class Map extends Component {
     alreadyLoad=false;
-
+    
     state ={
         redirect: false,
         redUrl: ""
@@ -16,7 +16,10 @@ class Map extends Component {
         elem.scrollTop = this.props.topPos;
         elem.scrollLeft = this.props.leftPos;
     }
-    
+    componentWillUnmount(){
+        let elem=  document.getElementById("mapConteiner");
+        this.props.onMapMove(elem.scrollTop,elem.scrollLeft);
+    }
     componentDidMount() {
         if(!this.alreadyLoad)
         {
@@ -25,8 +28,8 @@ class Map extends Component {
         }
     }
     checkScrollPos = ()=>{
-        let elem=  document.getElementById("mapConteiner");
-        this.props.onMapMove(elem.scrollTop,elem.scrollLeft);
+        
+        
     }
     nextLine =(line)=>{
         switch(line)
@@ -205,7 +208,6 @@ class Map extends Component {
                  {this.state.redirect ? <Redirect to={this.state.redUrl}/> : null};
                 <div>
                  <h1>Map: {this.props.reveals}</h1>
-                 {this.props.topPos} - {this.props.leftPos}
                  </div>
                 <div onScroll ={this.checkScrollPos} id="mapConteiner">
                     <div id="map">

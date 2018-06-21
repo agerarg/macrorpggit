@@ -59,7 +59,7 @@ class App extends Component {
           <Switch>
             <Route path="/characters" render={()=><h1>Characters</h1>} />
             <Route path="/map" exact render={()=><Map mContent={this.MapCont} />} />
-            <Route path="/map/dungeon/:pos" component={Dungeon} />
+            <Route path="/map/dungeon/:pos" render={()=><Dungeon mContent={this.MapCont} />} />
           </Switch>
        
           <h4>Redux Test</h4>
