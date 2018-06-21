@@ -5,11 +5,14 @@ import {connect } from 'react-redux';
 //Custom Classes for game:
 import Party from './gameCore/party/party';
 import Monster from './gameCore/char/monster';
+import MapContent from './gameCore/map/map';
+import Dungeon from './Components/dungeon';
 //Components imports for views:
 import Nav from './Components/navigation';
 import Map from './Components/map';
 class App extends Component {
 
+  MapCont= new MapContent();
 
   render() {
   /*
@@ -55,8 +58,8 @@ class App extends Component {
           <Nav />
           <Switch>
             <Route path="/characters" render={()=><h1>Characters</h1>} />
-            <Route path="/map" component={Map}  />
-            <Route path="/dungeon" render={()=><h1>Dungeon</h1>} />
+            <Route path="/map" exact render={()=><Map mContent={this.MapCont} />} />
+            <Route path="/map/dungeon/:pos" component={Dungeon} />
           </Switch>
        
           <h4>Redux Test</h4>

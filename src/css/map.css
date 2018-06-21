@@ -15,6 +15,36 @@
 .Mnone{
     background-color: green;
 }
+.Mesqueleton{
+    background-image: url("../img/monster/esqueleton.jpg");
+    background-repeat: no-repeat;
+}
+.Mbear{
+    background-image: url("../img/monster/bear.jpg");
+    background-repeat: no-repeat;
+}
+.Mknight{
+    background-image: url("../img/monster/knight.jpg");
+    background-repeat: no-repeat;
+}
+.Mmage{
+    background-image: url("../img/monster/mage.jpg");
+    background-repeat: no-repeat;
+}
+.Mzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
+.Morc{
+    background-image: url("../img/monster/orc.jpg");
+    background-repeat: no-repeat;
+}
+.Mzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
+
+
 .Mzombie{
     background-image: url("../img/monster/zombie.jpg");
     background-repeat: no-repeat;

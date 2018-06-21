@@ -1,17 +1,22 @@
 import React,{Component} from 'react';
 import '../css/map.css';
 import {connect } from 'react-redux';
+import {Redirect} from 'react-router-dom';
+
 class Map extends Component {
     alreadyLoad=false;
 
-     
+    state ={
+        redirect: false,
+        redUrl: ""
+    }
 
     centerToStart = ()=>{
         let elem=  document.getElementById("mapConteiner");
         elem.scrollTop = this.props.topPos;
         elem.scrollLeft = this.props.leftPos;
     }
-
+    
     componentDidMount() {
         if(!this.alreadyLoad)
         {
@@ -48,7 +53,7 @@ class Map extends Component {
           return found;
     }
     isOdd =(n)=> {
-        return Math.abs(n % 2) == 1;
+        return Math.abs(n % 2) === 1;
      }
      revealOddArea=(x,y)=>
      {
@@ -131,11 +136,16 @@ class Map extends Component {
     enterDungeonMap=(x,y)=>{
         let found = this.findBlock(x,y);
         if(found)
-           alert("wee");
-        else
-         alert("nop"+found);
+          {
+            let newState={...this.state};
+            newState.redUrl='/map/dungeon/'+x+"_"+y;
+            newState.redirect=true;
+            this.setState(newState);
 
+          }
+ 
     }
+    
     render (){
 
          let MapContent=[];
@@ -152,7 +162,15 @@ class Map extends Component {
                           });
                         if(found)
                         {
-                         classe="M"+found.monstType+"";
+
+                         let monst = this.props.mContent.setContent(i,j);
+
+                         if(monst)
+                         {
+                            classe="M"+monst.type;
+                         }
+                         else
+                            classe="Mnone";
                         }
                     }
                     if(i===20&j===20)
@@ -180,6 +198,8 @@ class Map extends Component {
         })        
         return (
             <div>
+            
+                 {this.state.redirect ? <Redirect to={this.state.redUrl}/> : null};
                 <div>
                  <h1>Map: {this.props.reveals}</h1>
                  {this.props.topPos} - {this.props.leftPos}

@@ -14,6 +14,7 @@ const reducer = (state=initialState,action)=>{
      case "REVEALMAP":
         action.revArr.map((obj)=>{
             newState.dataMap.push({x:obj.x,y:obj.y,monstType:"none",lvl:0});
+            return true;
         });
         newState.reveals+=1;
      break;
