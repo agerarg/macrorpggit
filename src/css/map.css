@@ -1,0 +1,71 @@
+#map{
+    width: 5000px;
+    height: 5000px;
+    background-color: #2D2D2D;
+    display: inline-block;
+    padding-top: 20%;
+}
+#mapConteiner{
+    width: 80%;
+    height:500px;
+    display: inline-block;
+
+    overflow: scroll;
+}
+.Mnone{
+    background-color: green;
+}
+.Mzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
+.center{ 
+    background-image: url("../img/center.png");
+    background-repeat: no-repeat;
+  
+ }
+ .discover{
+    background-color: green;
+
+ }
+ .arround{
+     background-color: yellow;
+ }
+ .fog{
+    background-color:black;
+ }
+.working{
+    background-image: url("../img/gear.gif");
+    background-repeat: no-repeat;
+    background-position: 30px 30px; 
+   
+}
+.monster{
+    background-image: url("../img/bux.jpg");
+    background-repeat: no-repeat;
+  
+}
+.hex{
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    width: 100px;
+    height: 100px;
+    margin-left: 3px;
+    display: inline-block;
+}
+.hex:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50); 
+    cursor: pointer;
+}
+.space{  }
+.hexLineStart{
+   
+}
+.hexLine2r{
+    margin-top: -25px;
+    margin-left: 105px;
+}
+.hexLine3r{
+    margin-top: -25px;
+}
