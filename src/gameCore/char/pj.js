@@ -11,6 +11,8 @@ class PJ{
     healGil = [];
     assistGil = null;
     buffGil = [];
+    life=0;
+    mana=0;
 
     mainTask="";
     constructor(NAME,RACE,CLASSE)
@@ -19,6 +21,9 @@ class PJ{
         this.name = NAME;
         this.race = RACE;
         this.classe = CLASSE;
+        this.life= this.stats.lifeLimit;
+        this.mana=this.stats.manaLimit;
+
     }
     getName=()=>{
         return this.name;

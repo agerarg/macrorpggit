@@ -42,8 +42,10 @@ class CharacterCreator extends Component{
     }
 
     showFirstOptions = ()=>{ 
+        let i=0;
         return this.state.firstoptions.map((op)=>{
-           return <option className="selectOption" value={op.value}>{op.text}</option>
+            i++;
+           return <option key={i} className="selectOption" value={op.value}>{op.text}</option>
        })
     }
 

@@ -95,3 +95,5 @@ const classAtribute = (race,classe)=>{
     }
     return stats;
 }
+
+export default classAtribute;
