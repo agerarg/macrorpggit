@@ -205,9 +205,9 @@ class Map extends Component {
         return (
             <div>
             
-                 {this.state.redirect ? <Redirect to={this.state.redUrl}/> : null};
-                <div>
-                 <h1>Map: {this.props.reveals}</h1>
+                 {this.state.redirect ? <Redirect to={this.state.redUrl}/> : null}
+                <div className="secTitle">
+                Map: {this.props.reveals}
                  </div>
                 <div onScroll ={this.checkScrollPos} id="mapConteiner">
                     <div id="map">

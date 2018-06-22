@@ -47,24 +47,40 @@ class Dungeon extends Component{
    }
    fillMaperino = ()=>{
        let items=[];
-            for(let i; i<=this.dungeonData.cant;i++)
+       let classe="";
+            for(let i=0; i<=41;i++)
             {
-                items.push(<div className="item"></div>);
+                //console.log("hello"+i)
+                if(i<=this.dungeonData.cant)
+                {
+                    classe="item monstbg D"+this.dungeonData.type;
+                     items.push(<div key={i} className={classe}></div>);
+                }
+                else    
+                     items.push(<div key={i} className="item"></div>);
             }
         return  items;
    }
+
+   backToMap =()=>{
+        let newState = {...this.state};
+        newState.redirectToMap=true;
+        this.setState(newState);
+   }
+
     render(){
         return(
             <div>
                  {this.state.redirectToMap ? <Redirect to="/map"/> : null}
-                <a>{this.props.match.params.pos}</a>
-                <div>Dungeon Component</div>
+                <div>
+                    <div className="secTitle" >Dungeon: {this.props.match.params.pos}</div>
+                     <div><button onClick={this.backToMap} className="GButton">Go to map</button> <button className="GButton">Add Characters</button></div>
+                </div>
                 <div className="dungeonContent">
                     <div className="dungeon">
-                      {this.fillMaperino}
+                      {this.fillMaperino()}
                     </div>
                 </div>
-
             </div>
         )
     }

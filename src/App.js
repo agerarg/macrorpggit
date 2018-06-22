@@ -10,6 +10,8 @@ import Dungeon from './Components/dungeon';
 //Components imports for views:
 import Nav from './Components/navigation';
 import Map from './Components/map';
+import Character from './Components/character';
+import CharactersList from './Components/charactersList';
 class App extends Component {
 
   MapCont= new MapContent();
@@ -57,7 +59,8 @@ class App extends Component {
       <div>
           <Nav />
           <Switch>
-            <Route path="/characters" render={()=><h1>Characters</h1>} />
+            <Route path="/characters" exact component={CharactersList} />
+            <Route path="/characters/:id" component={Character} />
             <Route path="/map" exact render={()=><Map mContent={this.MapCont} />} />
             <Route path="/map/dungeon/:pos" render={()=><Dungeon mContent={this.MapCont} />} />
           </Switch>

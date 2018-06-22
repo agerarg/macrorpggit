@@ -17,12 +17,59 @@
    
  } 
   .item {
-    background-color: #690505;
-    border: 1px solid #fff;
+    background-color: #333333;
+    border: 1px solid #000000;
     padding: 10px;
     font-size: 15px;
     text-align: center;
     border-radius: 10px;
-    width: 25px;
-    height: 25px;
+    width: 75px;
+    height: 75px;
   }
+  @media screen and (max-width: 600px) {
+    .item {
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+
+.monstbg{
+  background-size:100%;
+  background-color: #690505;
+} 
+
+.Desqueleton{
+    background-image: url("../img/monster/esqueleton.jpg");
+    background-repeat: no-repeat;
+}
+.Dbear{
+    background-image: url("../img/monster/bear.jpg");
+    background-repeat: no-repeat;
+}
+.Dknight{
+    background-image: url("../img/monster/knight.jpg");
+    background-repeat: no-repeat;
+}
+.Dmage{
+    background-image: url("../img/monster/mage.jpg");
+    background-repeat: no-repeat;
+}
+.Dzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
+.Dorc{
+    background-image: url("../img/monster/orc.jpg");
+    background-repeat: no-repeat;
+}
+.Dzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
+
+
+.Dzombie{
+    background-image: url("../img/monster/zombie.jpg");
+    background-repeat: no-repeat;
+}
