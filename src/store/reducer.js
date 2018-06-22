@@ -1,4 +1,5 @@
 const initialState = {
+    characters:[],
     dungeonMonsters:[],
     counter:0,
     reveals:0,
@@ -13,7 +14,8 @@ const reducer = (state=initialState,action)=>{
     switch(action.type)
     {
         case 'NEWCHARACTER':
-            console.log(action.char);
+            newState.characters.push(action.char);
+            localStorage.setItem('GD_Characters', JSON.stringify(newState.characters));
         break;
         case 'DUNGEONDISCOVER':
             newState.dungeonMonsters.push(action.dungeon);
@@ -35,11 +37,16 @@ const reducer = (state=initialState,action)=>{
        break
        case "DECREMENT":
         newState.counter-=1;
-      break
-      default:
-        
       break;
+      case "LOCALDATA":
+         newState.characters = JSON.parse(localStorage.getItem('GD_Characters'));
+         if(!newState.characters)
+             newState.characters=[];
+         console.log(newState.characters)    ;
+    break;
+      default:
     }
+    
     return newState;
 }
 export default reducer;

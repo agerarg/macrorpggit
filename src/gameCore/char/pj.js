@@ -1,5 +1,6 @@
 import Random from '../../utility/random';
 import claseAttr from '../char/claseAttr';
+import classNames from '../char/claseNames';
 class PJ{
     name = "";
     race="";
@@ -20,19 +21,10 @@ class PJ{
         this.stats = claseAttr(RACE,CLASSE);
         this.name = NAME;
         this.race = RACE;
-        this.classe = CLASSE;
+        this.classe = classNames(CLASSE);
         this.life= this.stats.lifeLimit;
         this.mana=this.stats.manaLimit;
 
-    }
-    getName=()=>{
-        return this.name;
-    }
-    getStat=(stat)=>{
-        return this.stats[stat];
-    }
-    getTarget=()=>{
-        return this.targetId;
     }
     setMonsters=(monsters)=>{
         this.Monsters=monsters;

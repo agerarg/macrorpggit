@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import Pj from '../gameCore/char/pj';
 import {connect } from 'react-redux';
+import {Redirect} from 'react-router-dom';
 class CharacterCreator extends Component{
 
     state ={
         firstoptions: [],
+        redirectToChars: false
     }
 
 
@@ -56,6 +58,9 @@ class CharacterCreator extends Component{
 
         let newChar = new Pj(el.value,firstClase.value,secClase.value);
         this.props.onNewCharacter(newChar);
+        let newState={...this.state};
+        newState.redirectToChars=true;
+        this.setState(newState);
     }
 
     render(){
@@ -63,7 +68,7 @@ class CharacterCreator extends Component{
         return (
             <div>
             <div className="secTitle">Character Creator</div>
-
+            {this.state.redirectToChars ? <Redirect to="/characters/"/> : null}
             <div className="Char-li">Name: <input id="charName" type="text" ></input></div>
             <div className="Char-li">Race: <select id="charClass" onChange={this.classSelect}  className="selectStyle">
             <option className="selectOption" value="none">-</option>

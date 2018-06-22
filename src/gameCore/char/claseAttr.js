@@ -44,6 +44,7 @@ const classAtribute = (race,classe)=>{
             stats.lifeLimit+=50;
             stats.attack-=2;
         break;
+        default:
     }
 
     switch(classe)
@@ -92,6 +93,7 @@ const classAtribute = (race,classe)=>{
             stats.lifeLimit+=20;
             stats.defense+=2;
         break;
+        default:
     }
     return stats;
 }

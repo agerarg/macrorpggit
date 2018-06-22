@@ -39,6 +39,7 @@
     .Char-Img {
         grid-column: 3 ;
         grid-row: 1 / 3;
+        text-align: center;
     }
     .Char-Agro {
         grid-column: 1 ;

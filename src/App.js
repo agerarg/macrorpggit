@@ -17,7 +17,12 @@ import CharacterCreator from './Components/characterCreator';
 class App extends Component {
 
   MapCont= new MapContent();
+  componentWillMount(){
 
+     this.props.onLocalData();
+    
+
+  }
   render() {
   /*
     let monsterList = [];
@@ -88,6 +93,7 @@ const mapDispatchToProps = dispatch =>{
   return {
     onIncrementCounter: ()=> dispatch({type: 'INCREMENT'}),
     onDecrementCounter: ()=> dispatch({type: 'DECREMENT'}),
+    onLocalData: ()=> dispatch({type: 'LOCALDATA'}),
   }
 }
 
