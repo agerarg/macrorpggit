@@ -78,7 +78,29 @@
        
      .Char-li {
         font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
-        border-bottom: 1px solid #ccc;
+        -moz-box-shadow:inset 0px 1px 0px 0px #f9eca0;
+        -webkit-box-shadow:inset 0px 1px 0px 0px #f9eca0;
+        box-shadow:inset 0px 1px 0px 0px #f9eca0;
+        background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e));
+        background:-moz-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+        background:-webkit-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+        background:-o-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+        background:-ms-linear-gradient(top, #f0c911 5%, #f2ab1e 100%);
+        background:linear-gradient(to bottom, #f0c911 5%, #f2ab1e 100%);
+        filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e',GradientType=0);
+        background-color:#f0c911;
+        -moz-border-radius:6px;
+        -webkit-border-radius:6px;
+        border-radius:6px;
+        border:1px solid #e65f44;
+        cursor:pointer;
+        color:#c92200;
+        font-family:Arial;
+        font-size:15px;
+        font-weight:bold;
+        padding:6px 24px;
+        text-decoration:none;
+        text-shadow:0px 1px 0px #ded17c;
       }
        
       .Char-li:last-child {
@@ -100,9 +122,37 @@
        
       .Char-li a:hover {
         font-size: 30px;
-        background: #f6f6f6;
+    
       }
 
       .padding-top5{
           padding-top: 5px;
       }
+
+
+      input,select{
+          font-size: 200%;
+          font-weight: 400;
+          color: #377D6A;
+          background: rgba(0,0,0,0.3);
+          border: none;
+          outline: none;
+          color: #fff;
+          text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+          border: 1px solid rgba(0,0,0,0.3);
+          border-radius: 4px;
+          box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px  1px rgba(255,255,255,0.2);
+          text-indent: 5px;
+          transition: all .3s ease-in-out;
+          position: relative;
+      }
+      input,select:focus{
+          box-shadow: inset 0 -5px 45px rgba(100,100,100,0.4), 0 1px 1px rgba(255,255,255,0.2);
+      }
+      .selectStyle{
+        width:300px;
+        cursor: pointer;
+      }
+     .selectOption{
+         background-color: #A17E1A;
+     }

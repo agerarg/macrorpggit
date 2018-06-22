@@ -12,6 +12,9 @@ const reducer = (state=initialState,action)=>{
     let newState = {...state};
     switch(action.type)
     {
+        case 'NEWCHARACTER':
+            console.log(action.char);
+        break;
         case 'DUNGEONDISCOVER':
             newState.dungeonMonsters.push(action.dungeon);
         break;
@@ -37,7 +40,6 @@ const reducer = (state=initialState,action)=>{
         
       break;
     }
-    console.log(newState);
     return newState;
 }
 export default reducer;

@@ -1,17 +1,26 @@
 import React,{Component} from 'react';
 import '../css/characters.css';
+import {withRouter, Redirect} from 'react-router-dom';
+
 import char from '../img/chars/rouge.png';
 class Character extends Component {
-
-
+     state ={
+        redirectToChars: false
+    }
+    backToChars =()=>{
+        let newState = {...this.state};
+        newState.redirectToChars=true;
+        this.setState(newState);
+   }
 
     render(){
 
             return (
                 <div>
                     <div className="secTitle">My Characters</div>
+                    {this.state.redirectToChars ? <Redirect to="/characters/"/> : null}
                     <div className="Char-Link-Bar">
-                        <button className="GButton">Actions</button>   <button className="GButton">Skills</button>    <button className="GButton">Items</button> 
+                    <button onClick={this.backToChars} className="GButton">Go to Characters</button> <button className="GButton">Actions</button>   <button className="GButton">Skills</button>    <button className="GButton">Items</button> 
                     </div>
                     <div className="Chars-conteiner">
                         <div className="Char-wrapper">
@@ -44,4 +53,4 @@ class Character extends Component {
 
 } 
 
-export default Character;
+export default withRouter(Character);

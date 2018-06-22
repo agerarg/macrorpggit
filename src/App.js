@@ -3,15 +3,17 @@ import React, { Component } from 'react';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import {connect } from 'react-redux';
 //Custom Classes for game:
-import Party from './gameCore/party/party';
-import Monster from './gameCore/char/monster';
+//import Party from './gameCore/party/party';
+//import Monster from './gameCore/char/monster';
 import MapContent from './gameCore/map/map';
 import Dungeon from './Components/dungeon';
 //Components imports for views:
 import Nav from './Components/navigation';
+//import Footer from './Components/footer';
 import Map from './Components/map';
 import Character from './Components/character';
 import CharactersList from './Components/charactersList';
+import CharacterCreator from './Components/characterCreator';
 class App extends Component {
 
   MapCont= new MapContent();
@@ -59,6 +61,7 @@ class App extends Component {
       <div>
           <Nav />
           <Switch>
+            <Route path="/character/creator" exact component={CharacterCreator} />
             <Route path="/characters" exact component={CharactersList} />
             <Route path="/characters/:id" component={Character} />
             <Route path="/map" exact render={()=><Map mContent={this.MapCont} />} />
@@ -68,7 +71,7 @@ class App extends Component {
           <h4>Redux Test</h4>
           <div><button onClick={this.props.onIncrementCounter}>Increment</button><button onClick={this.props.onDecrementCounter}>onDecrementCounter</button></div>
           <div>{this.props.ctr}</div>
-          
+         
       </div>
       </BrowserRouter>
       </div>

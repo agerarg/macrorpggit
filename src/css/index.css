@@ -6,9 +6,19 @@ body {
   font-family: 'IM Fell English SC', serif;
   
 }
+
+a{
+	color:  #FFE599;
+}
+
+a:hover{
+	color: #FF7F00;
+}
 .secTitle{
     font-size: 300%;
-    font-weight: bold;
+	font-weight: bold;
+	color: #FFE599;
+	-moz-window-shadow: 2px;
 }
 .GButton {
 	-moz-box-shadow:inset 0px 1px 0px 0px #cf866c;

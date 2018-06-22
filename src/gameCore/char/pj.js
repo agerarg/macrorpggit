@@ -1,21 +1,10 @@
 import Random from '../../utility/random';
+import claseAttr from '../char/claseAttr';
 class PJ{
     name = "";
-    stats={
-        lifeLimit:100,
-        life:100,
-        attack:25,
-        magicAttack:10,
-        attackSpeed:5,
-        castSpeed: 5,
-        defense: 20,
-         magicDefense: 20,
-         critical:5,
-         criticalDmg:125,
-         magicCritical:3,
-         magicCriticalDmg: 250,
-
-    };
+    race="";
+    classe="";
+    stats={ };
     isActive=true;
     Monsters=[];
     targetId=0;
@@ -24,17 +13,12 @@ class PJ{
     buffGil = [];
 
     mainTask="";
-    constructor(NAME,STR,DEX,INT)
+    constructor(NAME,RACE,CLASSE)
     {
+        this.stats = claseAttr(RACE,CLASSE);
         this.name = NAME;
-        this.stats.lifeLimit += STR*3;
-        this.stats.life = this.stats.lifeLimit;
-        this.stats.attack +=this.stats.attack/100 * STR;
-        this.stats.attackSpeed +=DEX;
-        this.stats.castSpeed +=DEX;
-        this.stats.defense +=DEX+INT;
-        this.stats.magicDefense +=DEX+INT;
-
+        this.race = RACE;
+        this.classe = CLASSE;
     }
     getName=()=>{
         return this.name;

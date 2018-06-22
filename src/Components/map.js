@@ -27,10 +27,6 @@ class Map extends Component {
              this.alreadyLoad=true;
         }
     }
-    checkScrollPos = ()=>{
-        
-        
-    }
     nextLine =(line)=>{
         switch(line)
         {
